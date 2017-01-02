@@ -26,4 +26,91 @@ CREATE INDEX idx_post_doro
 	ON post.post( -- 우편번호
 		doro ASC -- 도로
 	);
-	
+
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/강원도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/경기도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+-- -----------------
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/경상남도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/경상북도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/광주광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/대구광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/대전광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/부산광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/서울특별시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/세종특별자치시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/울산광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/인천광역시.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/전라남도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/전라북도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/제주특별자치도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/충청남도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/충청북도.txt' INTO table post
+character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
+(@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
+set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
