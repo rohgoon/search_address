@@ -1,116 +1,104 @@
--- ¿ìÆí¹øÈ£
+-- ï¿½ï¿½ï¿½ï¿½ï¿½È£
 DROP SCHEMA IF EXISTS post;
 
--- ¿ìÆí¹øÈ£
+-- ï¿½ï¿½ï¿½ï¿½ï¿½È£
 CREATE SCHEMA post;
 
--- ¿ìÆí¹øÈ£
+-- ï¿½ï¿½ï¿½ï¿½ï¿½È£
 CREATE TABLE post.post (
-	zipcode   CHAR(5)     NULL COMMENT '¿ìÆí¹øÈ£', -- ¿ìÆí¹øÈ£
-	sido      VARCHAR(20) NULL COMMENT '½Ãµµ', -- ½Ãµµ
-	sigungu   VARCHAR(20) NULL COMMENT '½Ã±º±¸', -- ½Ã±º±¸
-	doro      VARCHAR(80) NULL COMMENT 'µµ·Î', -- µµ·Î
-	building1 INT(5)      NULL COMMENT '°Ç¹°¹øÈ£1', -- °Ç¹°¹øÈ£1
-	building2 INT(5)      NULL COMMENT '°Ç¹°¹øÈ£2' -- °Ç¹°¹øÈ£2
+	zipcode   CHAR(5)     NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½È£', -- ï¿½ï¿½ï¿½ï¿½ï¿½È£
+	sido      VARCHAR(20) NULL COMMENT 'ï¿½Ãµï¿½', -- ï¿½Ãµï¿½
+	sigungu   VARCHAR(20) NULL COMMENT 'ï¿½Ã±ï¿½ï¿½ï¿½', -- ï¿½Ã±ï¿½ï¿½ï¿½
+	doro      VARCHAR(80) NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+	building1 INT(5)      NULL COMMENT 'ï¿½Ç¹ï¿½ï¿½ï¿½È£1', -- ï¿½Ç¹ï¿½ï¿½ï¿½È£1
+	building2 INT(5)      NULL COMMENT 'ï¿½Ç¹ï¿½ï¿½ï¿½È£2' -- ï¿½Ç¹ï¿½ï¿½ï¿½È£2
 )
-COMMENT '¿ìÆí¹øÈ£';
+COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½È£';
 
--- ½Ãµµ ÀÎµ¦½º
+-- ï¿½Ãµï¿½ ï¿½Îµï¿½ï¿½ï¿½
 CREATE INDEX idx_post_sido
-	ON post.post( -- ¿ìÆí¹øÈ£
-		sido ASC -- ½Ãµµ
+	ON post.post( -- ï¿½ï¿½ï¿½ï¿½ï¿½È£
+		sido ASC -- ï¿½Ãµï¿½
 	);
 
--- µµ·Î ÀÎµ¦½º
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 CREATE INDEX idx_post_doro
-	ON post.post( -- ¿ìÆí¹øÈ£
-		doro ASC -- µµ·Î
+	ON post.post( -- ï¿½ï¿½ï¿½ï¿½ï¿½È£
+		doro ASC -- ï¿½ï¿½ï¿½ï¿½
 	);
 
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/°­¿øµµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/°æ±âµµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½âµµ.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 -- -----------------
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/°æ»ó³²µµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ó³²µï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/°æ»óºÏµµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½Ïµï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/±¤ÁÖ±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/´ë±¸±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ë±¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/´ëÀü±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ºÎ»ê±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½Î»ê±¤ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/¼­¿ïÆ¯º°½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/¼¼Á¾Æ¯º°ÀÚÄ¡½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/¿ï»ê±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ê±¤ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ÀÎÃµ±¤¿ª½Ã.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/Àü¶ó³²µµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ó³²µï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/Àü¶óºÏµµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½Ïµï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/Á¦ÁÖÆ¯º°ÀÚÄ¡µµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ÃæÃ»³²µµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
-LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ÃæÃ»ºÏµµ.txt' INTO table post
+LOAD data LOCAL INFILE 'C:/workspace/workspace_java/search_address/DataFiles/ï¿½ï¿½Ã»ï¿½Ïµï¿½.txt' INTO table post
 character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 (@zipcode, @sido, @d, @sigungu , @d, @d, @d, @d, @doro, @d, @d, @building1, @building2, @d, @d, @d, @d, @d, @d ,@d, @d, @d, @d, @d, @d, @d)
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+select zipcode, sido, sigungu, doro, building1, building2 from post where doro like '%ìž„%';
