@@ -101,4 +101,4 @@ character set 'euckr' fields TERMINATED by '|' IGNORE 1 lines
 set zipcode=@zipcode, sido=@sido, sigungu=@sigungu, doro=@doro, building1=@building1, building2=@building2;
 
 
-select zipcode, sido, sigungu, doro, building1, building2 from post where doro like '%임%';
+select zipcode, sido, sigungu, doro, building1, building2 from post where sido like '%대구%' and doro like '%파계%';
