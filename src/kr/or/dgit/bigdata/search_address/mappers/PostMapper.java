@@ -5,7 +5,6 @@ import java.util.Map;
 
 import kr.or.dgit.bigdata.search_address.dto.Post;
 
-public interface PostMapper {
-	Post findZipcodeBySidoAndDoro(String sido,String doro);
+public interface PostMapper {	
 	List<Post> findAllBySidoAndDoro(Map<String, Object> map);
 }

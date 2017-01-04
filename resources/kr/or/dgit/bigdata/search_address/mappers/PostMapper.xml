@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.co.dgit.bigdate.search_address.mappers.PostMapper">
-	<select id="findZipcodeBySidoAndDoro" parameterType="string" resultType="Post">
-		select zipcode, sido, sigungu, doro, building1, building2 from post where sido like #{sido} and doro like #{doro}
-	</select>
+<mapper namespace="kr.or.dgit.bigdata.search_address.mappers.PostMapper">
+	
 	<select id="findAllBySidoAndDoro" parameterType="hashmap" resultType="Post">
 		select zipcode, sido, sigungu, doro, building1, building2 from post where sido like #{sido} 
 		<if test="doro != null">
-			and doro like #{doro}		
-		</if>
-		
-		
+			and doro like #{doro}
+		</if>		
 	</select>
 </mapper>

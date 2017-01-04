@@ -25,11 +25,7 @@ public class PostServiceTest {
 		postService = null;
 	}
 
-	/*@Test
-	public void testFindZipcodeBySidoAndDoro() {
-		Post post = postService.findZipcodeBySidoAndDoro("%대구%", "%중앙%");
-		Assert.assertNotNull(post);
-	}*/
+	
 	@Test 
 	public void testFindAllBySidoAndDoro() {
 		
