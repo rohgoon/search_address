@@ -11,11 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTable;
 
 public class SearchPostMain extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtDoro;
+	private JTable tablePost;
 
 	/**
 	 * Launch the application.
@@ -48,17 +51,17 @@ public class SearchPostMain extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblSido = new JLabel("sido");
+		JLabel lblSido = new JLabel("시도명");
 		panel.add(lblSido);
 		
 		JComboBox cbSido = new JComboBox();
+		cbSido.setModel(new DefaultComboBoxModel(new String[] {"강원도", "경기도", "경상남도", "경상북도", "광주광역시", "대구광역시", "대전광역시", "부산광역시", "서울특별시", "세종특별자치시", "울산광역시", "인천광역시", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"}));
 		panel.add(cbSido);
 		
-		JLabel lblDoro = new JLabel("doro");
+		JLabel lblDoro = new JLabel("도로명");
 		panel.add(lblDoro);
 		
 		txtDoro = new JTextField();
-		txtDoro.setText("doro");
 		panel.add(txtDoro);
 		txtDoro.setColumns(10);
 		
@@ -67,6 +70,9 @@ public class SearchPostMain extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		tablePost = new JTable();
+		scrollPane.setViewportView(tablePost);
 	}
 
 }

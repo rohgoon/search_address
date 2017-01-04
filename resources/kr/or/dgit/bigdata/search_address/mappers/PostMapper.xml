@@ -6,6 +6,6 @@
 		select zipcode, sido, sigungu, doro, building1, building2 from post where sido like #{sido} 
 		<if test="doro != null">
 			and doro like #{doro}
-		</if>		
+		</if>
 	</select>
 </mapper>
